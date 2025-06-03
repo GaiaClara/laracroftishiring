@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+  <category>
+    <pattern>Salve</pattern>
+    <template>Salve, entra pure. Sei qui per il colloquio di lavoro? 
+        <button>
+            <text>Sì, sono qui per questo.</text>
+            <postback>Sì</postback>
+        </button>
+    </template>
+  </category>
+
+<category>
+    <pattern>Buongiorno</pattern>
+    <template><srai>Salve</srai></template>
+</category>
+
+<category>
+    <pattern>toc toc</pattern>
+    <template><srai>Salve</srai></template>
+</category>
+
+<category>
+    <pattern>Posso entrare</pattern>
+    <template><srai>Salve</srai></template>
+</category>
+
+<category>
+    <pattern>Sì</pattern>
+    <template>Molto bene, siediti pure.</template>
+</category>
+
+<category>
+    <pattern>Grazie, signora Croft</pattern>
+    <template>Prima di iniziare, vorrei farti qualche domanda.</template>
+</category>
+
+<category>
+    <pattern>Sono pronto</pattern>
+    <template> Ti piace l'avventura?
+        <button>
+            <text>Sì, mi piace</text>
+            <postback>ingresso 1</postback>
+        </button>
+        <button>
+            <text>No, non fa per me</text>
+            <postback>uscita 1</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>ingresso 1</pattern>
+    <template>
+        Molto bene, passiamo alla prossima domanda:<break/>
+        sei coraggioso?
+    <button>
+        <text>Sì, lo sono</text>
+        <postback>ingresso 2</postback>
+    </button>
+    <button>
+        <text>No, non molto</text>
+        <postback>uscita 2</postback>
+    </button>
+    </template>
+</category>
+
+<category>
+    <pattern>uscita 1</pattern>
+    <template>Ti ringrazio, ma non sei adatto a questo lavoro.</template>
+</category>
+
+<category>
+    <pattern>uscita 2</pattern>
+    <template>Mi dispiace, questo lavoro potrebbe essere troppo rischioso per te.</template>
+</category>
+
+<category>
+    <pattern>ingresso 2</pattern>
+    <template>
+        Eccellente, passiamo all'ultima domanda:<break/>
+        hai una morale ferrea ed alti ideali?
+            <button>
+                <text>Sì, ho tutto ciò che chiede</text>
+                <postback>ingresso 3</postback>
+            </button>
+            <button>
+                <text>No, non li ho</text>
+                <postback>uscita 3</postback>
+            </button>
+    </template>
+</category>
+
+<category>
+    <pattern>ingresso 3</pattern>
+    <template>
+        Molto bene! Ora vediamo cosa sai su di me. <break/> sei pronto?
+        
+        <button>
+            <text>Sì</text>
+            <postback>Inizia il test</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>Attendi 10 secondi</postback>
+        </button>
+        </template>
+</category>
+
+<category>
+    <pattern>uscita 3</pattern>
+    <template>Ti ringrazio per esserti candidato, ma non sei la persona che stavo cercando.</template>
+</category>
+
+<category>
+    <pattern>Attendi 10 secondi</pattern>
+    <template>Va bene, ti darò del tempo per prepararti.<break/><delay>10</delay>Sei pronto?
+   <button>
+            <text>Sì</text>
+            <postback>Inizia il test</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>Attendi 10 secondi</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>Inizia il test</pattern>
+    <template>
+        Ora cominceremo il vero e proprio colloquio.<break/>
+        Vediamo di che pasta sei fatto! 
+        <button>
+            <text>Inizia il colloquio</text>
+            <postback>start</postback>
+        </button>
+        <button>
+            <text>Non ci riesco</text>
+            <postback>uscita definitiva</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>uscita definitiva</pattern>
+    <template>
+        Mi dispiace, l'esitazione a volte può uccidere. Portarti con me potrebbe essermi fatale.
+        <button>
+            <text>Esci dalla stanza</text>
+            <postback></postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>Esci dalla stanza</pattern>
+    <template>Lara Croft chiama il prosimo candidato. Tu lo guardi in faccia e gli dici "Buona fortuna".</template>
+</category>
+
+<category>
+    <pattern>start</pattern>
+    <template>
+        Prima domanda:<break/>COSA CERCAVO IN FONDO AL MARE?
+        <button>
+            <text>Il tempio della rosa</text>
+            <postback>incorretta 1</postback>
+        </button>
+        <button>
+            <text>Il tempio della luna</text>
+            <postback>corretta 1</postback>
+        </button>
+        <button>
+            <text>Il tempio della fiamma</text>
+            <postback>incorretta 1</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>incorretta *</pattern>
+    <template>
+        Mi dispiace, non è la risposta corretta.<break/>
+        Vuoi ricominciare?
+        <button>
+            <text>Voglio ricominciare</text>
+            <postback>start</postback>
+        </button>
+        <button>
+            <text>Non posso</text>
+            <postback>uscita dopo start</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>uscita dopo start</pattern>
+    <template>L'ignoranza e la paura potrebbero essere fatali in anzione. Non credo tu sia la persona adatta per qusto lavoro.
+    <button>
+            <text>Esci dalla stanza</text>
+            <postback></postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 1</pattern>
+    <template>
+        Seconda domanda:<break/>A CHI APPARTENEVA QUESTO TEMPIO?
+        <button>
+            <text>Alessandro Magno</text>
+            <postback>corretta 2</postback>
+        </button>
+        <button>
+            <text>Giulio Cesare</text>
+            <postback>incorretta 2</postback>
+        </button>
+        <button>
+            <text>Galileo Galilei</text>
+            <postback>incorretta 2</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 2</pattern>
+    <template>
+        Terza domanda:<break/>COME RISPONDO QUANDO VEDO UN TESORO?
+        <button>
+            <text>Prendilo</text>
+            <postback>incorretta 3</postback>
+        </button>
+        <button>
+            <text>Roba tua</text>
+            <postback>incorretta 3</postback>
+        </button>
+        <button>
+            <text>Roba mia</text>
+            <postback>corretta 3</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 3</pattern>
+    <template>
+        Quarta domanda:<break/>COME SONO TORNATA IN RUPERFICIE DAL TEMPIO SOMMERSO?
+        <button>
+            <text>Con un delfino</text>
+            <postback>incorretta 4</postback>
+        </button>
+        <button>
+            <text>Con una manta</text>
+            <postback>incorretta 4</postback>
+        </button>
+        <button>
+            <text>Con uno squalo</text>
+            <postback>corretta 4</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 4</pattern>
+    <template>
+        Quinta domanda:<break/>QUALE AGENZIA SEGRETA MI HA CHIESTO AIUTO?
+        <button>
+            <text>MI6</text>
+            <postback>corretta 5</postback>
+        </button>
+        <button>
+            <text>CIA</text>
+            <postback>incorretta 5</postback>
+        </button>
+        <button>
+            <text>FBI</text>
+            <postback>incorretta 5</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 5</pattern>
+    <template>
+        Sesta domanda:<break/>DI CHE COLORE HA IL MANTO IL MIO CAVALLO?
+        <button>
+            <text>Bianco</text>
+            <postback>incorretta 6</postback>
+        </button>
+        <button>
+            <text>Nero</text>
+            <postback>corretta 6</postback>
+        </button>
+        <button>
+            <text>Marrone</text>
+            <postback>incorretta 6</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 6</pattern>
+    <template>
+        Settima domanda:<break/>COME SI CHIAMA IL CRIMINALE CHE MI HA MOSTRATO L'MI6?
+        <button>
+            <text>Chen Lu</text>
+            <postback>corretta 7</postback>
+        </button>
+        <button>
+            <text>Kung Fu</text>
+            <postback>incorretta 7</postback>
+        </button>
+        <button>
+            <text>Ni Hao</text>
+            <postback>incorretta 7</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 7</pattern>
+    <template>
+        Ottava domanda:<break/>COSA DOVREBBE ESSERE LA SFERA?
+        <button>
+            <text>Una boccia</text>
+            <postback>incorretta 8</postback>
+        </button>
+        <button>
+            <text>Una mappa</text>
+            <postback>corretta 8</postback>
+        </button>
+        <button>
+            <text>Niente di importante</text>
+            <postback>corretta 8</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 8</pattern>
+    <template>
+        Nona domanda:<break/>CHE STRADA HO PRESO CON LA MOTO IN CINA?
+        <button>
+            <text>L'autostrada</text>
+            <postback>incorretta 9</postback>
+        </button>
+        <button>
+            <text>La tangenziale</text>
+            <postback>incorretta 9</postback>
+        </button>
+        <button>
+            <text>La Grande Muraglia</text>
+            <postback>corretta 9</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 9</pattern>
+    <template>
+        Decima domanda:<break/>DOVE SI TROVA LA SFERA PERDUTA?
+        <button>
+            <text>Alla pagoda del fiore, Shangai</text>
+            <postback>corretta 10</postback>
+        </button>
+        <button>
+            <text>Al tempio del drago, Tibet</text>
+            <postback>incorretta 10</postback>
+        </button>
+        <button>
+            <text>Ai piedi del K2</text>
+            <postback>incorretta 10</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 10</pattern>
+    <template>
+        Tieni duro, sei a metà!<break/>
+        Undicesima domanda:<break/>DOVE SONO ANDATA DOPO SHANGAI?
+        <button>
+            <text>Pechino</text>
+            <postback>incorretta 11</postback>
+        </button>
+        <button>
+            <text>Hong Kong</text>
+            <postback>corretta 11</postback>
+        </button>
+        <button>
+            <text>Hangzhou</text>
+            <postback>incorretta 11</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 11</pattern>
+    <template>
+        Dodicesima domanda:<break/>CHE CARTONE STAVA GUARDANDO LA FAMIGLIA CHE MI HA PRESTATO LA TELEVISIONE?
+        <button>
+            <text>Spongebob Squarepants</text>
+            <postback>corretta 12</postback>
+        </button>
+        <button>
+            <text>Krokodil e Ciburaska</text>
+            <postback>incorretta 12</postback>
+        </button>
+        <button>
+            <text>Lady bug</text>
+            <postback>incorretta 12</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 12</pattern>
+    <template>
+        Tredicesima domanda:<break/>DOVE MI SONO DIRETTA DOPO HONG KONG?
+        <button>
+            <text>Europa, Monte Bianco</text>
+            <postback>incorretta 13</postback>
+        </button>
+        <button>
+            <text>Africa, Kilimanjaro</text>
+            <postback>corretta 13</postback>
+        </button>
+        <button>
+            <text>America, Montagne Rocciose</text>
+            <postback>incorretta 13</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 13</pattern>
+    <template>
+        Quattordicesima domanda:<break/>COME SONO SALITA SULLA MACCHINA DEL MIO AMICO IN AFRICA?
+        <button>
+            <text>Atterrando con il paracadute</text>
+            <postback>corretta 14</postback>
+        </button>
+        <button>
+            <text>Normalmente</text>
+            <postback>incorretta 14</postback>
+        </button>
+        <button>
+            <text>Con un salto mortale</text>
+            <postback>incorretta 14</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 14</pattern>
+    <template>
+        Quindicesima domanda:<break/>DOVE ERA IMMERSO IL VASO DI PANDORA?
+        <button>
+            <text>Nelle lacrime di pandora</text>
+            <postback>incorretta 15</postback>
+        </button>
+        <button>
+            <text>Nella lava fisa</text>
+            <postback>incorretta 15</postback>
+        </button>
+        <button>
+            <text>In una pozza di acido</text>
+            <postback>corretta 15</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 15</pattern>
+    <template>
+        Sedicesima domanda:<break/>COSA VOLEVA FARNE TERRY DEL VASO?
+        <button>
+            <text>Lasciarlo lì</text>
+            <postback>incorretta 16</postback>
+        </button>
+        <button>
+            <text>Venderlo</text>
+            <postback>corretta 16</postback>
+        </button>
+        <button>
+            <text>Aprirlo</text>
+            <postback>incorretta 16</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 16</pattern>
+    <template>
+        Diciassettesima domanda:<break/>COSA HO FATTO PER SALVARE IL VASO?
+        <button>
+            <text>Ho ucciso Terry</text>
+            <postback>corretta 17</postback>
+        </button>
+        <button>
+            <text>Ho aperto il vaso</text>
+            <postback>incorretta 17</postback>
+        </button>
+        <button>
+            <text>Ho venduto il vaso</text>
+            <postback>incorretta 17</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 17</pattern>
+    <template>
+        Diciottesima domanda:<break/>DOVE HO MESSO IL VASO ALLA FINE?
+        <button>
+            <text>Nel laghetto dei sospiri</text>
+            <postback>incorretta 18</postback>
+        </button>
+        <button>
+            <text>Nelle lacrime di Pandora</text>
+            <postback>incorretta 18</postback>
+        </button>
+        <button>
+            <text>Nella pozza di acido</text>
+            <postback>corretta 18</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 18</pattern>
+    <template>
+        Diciannovesima domanda:<break/>COSA PENSO DEL VASO?
+        <button>
+            <text>Che sarebbe stato meglio aprirlo</text>
+            <postback>incorretta 19</postback>
+        </button>
+        <button>
+            <text>Ci sono cose che non devono essere trovate</text>
+            <postback>corretta 19</postback>
+        </button>
+        <button>
+            <text>Che starebbe bene nella mia stanza dei trofei</text>
+            <postback>incorretta 19</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>corretta 19</pattern>
+    <template>
+        Ultima domanda:<break/>COSA RISPONDO SEMPRE AI MIEI AMICI QUANDO MI CHIEDONO "Fai mai le cose nel modo più semplice?"
+        <button>
+            <text>Per darti una delusione?</text>
+            <postback>corretta 20</postback>
+        </button>
+        <button>
+            <text>Mai</text>
+            <postback>incorretta 20</postback>
+        </button>
+        <button>
+            <text>In effetti no</text>
+            <postback>incorretta 20</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>Corretta 20</pattern>
+    <template>
+        Complimenti! Il test è finito. Hai dimostrato forza, tenacia e concentrazione. <break/>
+        Vuoi sapere il tuo punteggio? 
+        <button>
+            <text>Sì</text>
+            <postback>mostra punteggio</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>Proseguiamo</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>mostra punteggio</pattern>
+    <template>
+        Queste erano le risposte giuste!
+        <ol>
+            <li>Il tempio della luna</li>
+            <li>Alessandro Magno</li>
+            <li>Roba mia</li> 
+            <li>Con uno squalo</li> 
+            <li>MI6</li> 
+            <li>Nero</li> 
+            <li>Chen Lu</li> 
+            <li>Una mappa</li> 
+            <li>La Grande Muraglia</li> 
+            <li>Alla pagoda del fiore, Shangai</li> 
+            <li>Hong Kong</li> 
+            <li>Spongebob Squarepants</li> 
+            <li>Africa, Kilimanjaro</li> 
+            <li>Atterrando con il paracadute</li> 
+            <li>In una pozza di acido</li> 
+            <li>Venderlo</li> 
+            <li>Ho ucciso Terry</li> 
+            <li>Nella pozza di acido</li> 
+            <li>Ci sono cose che non devono essere trovate</li> 
+            <li>Per darti una delusione?</li> 
+         </ol>
+        Come sei andato?
+        <button>
+            <text>Nessun errore</text>
+            <postback>Eccellente</postback>
+        </button>
+        <button>
+            <text>1-5 errori</text>
+            <postback>Bene</postback>
+        </button>
+        <button>
+            <text>Più di 5 errori</text>
+            <postback>Non ci siamo</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>Bene</pattern>
+    <template>Vedo che hai fatto qualche errore, passerai qualche mese a studiare prima di passare all'azione.</template>
+</category>
+
+<category>
+    <pattern>Non ci siamo</pattern>
+    <template>
+        Dovrai fare molto meglio di così. Torna quando sarai pronto.
+        <button>
+            <text>Esci dalla stanza</text>
+            <postback></postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>Eccellente</pattern>
+    <template>Complimenti! Il posto è tuo, se lo vuoi.
+    <button>
+        <text>Accetto il posto</text>
+        <postback>Accetta</postback>
+    </button>
+    <button>
+        <text>Rifiuto il posto</text>
+        <postback>Rifiuta</postback>
+    </button>
+    </template>
+</category>
+
+<category>
+    <pattern>Accetta</pattern>
+    <template>Molto bene, ecco il contratto, cominciamo domani.
+    <button>
+        <text>Prendi il contratto</text>
+        <postback>Good end</postback>
+    </button>
+    </template>
+</category>
+
+<category>
+    <pattern>Rifiuta</pattern>
+    <template>Che peccato, sei arrivato fino qua e ti arrendi ora? Forse ho sbagliato a giudicarti.
+    <button>
+        <text>Alzati ed esci</text>
+        <postback>Bad end</postback>
+    </button>
+    </template>
+</category>
+
+<category>
+    <pattern>Good end</pattern>
+    <template>
+        Il viso di Lara si illumina e il suo sorriso è contagioso.<break/> Afferri il contratto alzandoti in piedi fiducioso.
+        <break/> Da domani, si inizia una nuova avventura!
+    </template>
+</category>
+
+<category>
+    <pattern>Bad end</pattern>
+    <template>
+        Negli occhi di Lara leggi delusione.<break/>
+        Pensavi anche tu diessere la persona giusta, ma quando è arrivato il momento di accettare, qualcosa dentro di te ti ha fermato.<break/>
+        Ti alzi, saluti cordialmente, ed esci dalla stanza.
+        <button>
+            <text>Esci dalla stanza</text>
+            <postback></postback>
+        </button>
+    </template>
+</category>
+
+
+
+</aiml>
