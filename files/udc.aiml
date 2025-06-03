@@ -583,6 +583,25 @@
 </category>
 
 <category>
+    <pattern>Proseguiamo</pattern>
+    <template>
+         Come sei andato?
+        <button>
+            <text>Nessun errore</text>
+            <postback>Eccellente</postback>
+        </button>
+        <button>
+            <text>1-5 errori</text>
+            <postback>Bene</postback>
+        </button>
+        <button>
+            <text>Più di 5 errori</text>
+            <postback>Non ci siamo</postback>
+        </button>
+    </template>
+</category>
+
+<category>
     <pattern>mostra punteggio</pattern>
     <template>
         Queste erano le risposte giuste!
@@ -626,7 +645,18 @@
 
 <category>
     <pattern>Bene</pattern>
-    <template>Vedo che hai fatto qualche errore, passerai qualche mese a studiare prima di passare all'azione.</template>
+    <template>
+        Vedo che hai fatto qualche errore, passerai qualche mese a studiare prima di passare all'azione.<break/>
+         Il posto è tuo, se lo vuoi.
+    <button>
+        <text>Accetto il posto</text>
+        <postback>Accetta</postback>
+    </button>
+    <button>
+        <text>Rifiuto il posto</text>
+        <postback>Rifiuta</postback>
+    </button>   
+    </template>
 </category>
 
 <category>
@@ -686,7 +716,7 @@
     <pattern>Bad end</pattern>
     <template>
         Negli occhi di Lara leggi delusione.<break/>
-        Pensavi anche tu diessere la persona giusta, ma quando è arrivato il momento di accettare, qualcosa dentro di te ti ha fermato.<break/>
+        Pensavi anche tu di essere la persona giusta, ma quando è arrivato il momento di accettare, qualcosa dentro di te ti ha fermato.<break/>
         Ti alzi, saluti cordialmente, ed esci dalla stanza.
         <button>
             <text>Esci dalla stanza</text>
